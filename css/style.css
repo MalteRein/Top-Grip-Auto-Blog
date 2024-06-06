@@ -1,0 +1,975 @@
+/* Blog Perimeter */
+:root {
+    /* Colors */
+    --ColorBlack : black;
+    --ColorWhite : white;
+    --ColorRed: rgb(235, 20, 20);
+    --ColorDarkred: rgb(194, 14, 14);
+    --ColorCustomGrey: #343434;
+
+    /* Blog HEADER */
+    --HeaderHeight: 8vh;
+    --HeaderWidth: 100%;
+
+}
+
+/*************************/
+/* Blog Default Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Orbitron", sans-serif; 
+}
+body {
+    background-color: #161616;
+    color: white;
+}
+
+/******************/
+/* AI Blog Header */
+header {
+    height: 10vh;
+    width: 100%;
+
+    margin-top: 1vh;
+}
+
+    /* Logo */
+    #headerBlogName {
+        height: var(--HeaderHeight);
+        width: 20vw;
+
+        float: left;
+
+        margin-top: 0.5vh;
+        margin-left: 3vw;
+    }
+        #BlogNameText {
+            float: left;
+
+            color: white;
+            font-family: "Faster One", system-ui;
+            font-size: 300%;
+        }
+
+    /* Contact Button */
+    #headerContactButton {
+        height: var(--HeaderHeight);
+        width: 7vw;
+
+        margin-left: 58vw;
+        margin-top: 2vh;
+
+        float: left;
+    }
+        #headerContactButton button {
+            height: 4vh;
+            width: 7vw;
+
+            padding-top: 0.5vh;
+
+            border-radius: 15vh;
+            border: none;
+            outline: none;
+
+            color: white;
+            background-color: #343434;
+        }
+            #headerContactButton button:hover {
+                transform: translate(0, -0.2rem);
+            }
+
+
+            #headerContactButton:hover #headerContactText {
+                transform: rotate3d(567, 1, 1, 360deg);
+                transition: 0.5s;
+            }
+            #headerContactText {
+                font-size: 100%;
+            }
+
+
+    /* Navbar Button */
+    #navbarButton {
+        height: var(--HeaderHeight);
+        width: 5vw;
+
+        margin-left: 2vw;
+        margin-top: 1.25vh;
+        float: left;
+    }
+        #navbarButton button {
+            height: 5.5vh;
+            width: 3vw;
+
+            border-radius: 15vh;
+            border: 1px white solid;
+
+            outline: none;
+            background-color: white;
+
+        }
+            
+
+        #navLines {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+            #navLineTop, #navLineBottom {
+                overflow: hidden;
+            }
+      
+                #navLine1 {
+                    margin-top: 0.5vh;
+                }
+                #navLine2 {
+                    margin-top: -2vh;
+                }
+            
+                #navbarButton:hover #navLine1 {
+                    animation: dash-left-out 200ms forwards;
+                }
+                    @keyframes dash-left-out {
+                        0% {
+                            transform: translateX(0%);
+                        }
+                        50% {
+                            transform: translateX(-50%);
+                        }
+                        100% {
+                            transform: translateX(-100%);
+                        }
+                    }
+
+                #navbarButton:hover #navLine1 {
+                    animation: dash-left-in 200ms forwards;
+                }
+                    @keyframes dash-left-in {
+                        0% {
+                            transform: translateX(-100%);
+                        }
+                        50% {
+                            transform: translateX(-50%);
+                        }
+                        100% {
+                            transform: translateX(0%);
+                        }
+                    }
+                
+                #navbarButton:hover #navLine2 {
+                    animation: dash-right-out 200ms forwards;
+                }
+                        @keyframes dash-right-out {
+                            0% {
+                                transform: translateX(0%);
+                            }
+                            50% {
+                                transform: translateX(50%);
+                            }
+                            100% {
+                                transform: translateX(100%);
+                            }
+                        }
+                
+                #navbarButton:hover #navLine2 {
+                    animation: dash-right-in 200ms forwards;
+                }
+                        @keyframes dash-right-in {
+                            0% {
+                                transform: translateX(100%);
+                            }
+                            50% {
+                                transform: translateX(50%);
+                            }
+                            100% {
+                                transform: translateX(0%);
+                            }
+                        }
+        
+
+
+    /* Navbar */
+    #navbarBackground {
+        position: fixed;
+        display: none;
+
+        height: 100%;
+        width: 100%;
+
+        background-color: black;
+    }
+    .navbar-menu {
+        display: none;
+        position: fixed;
+
+        height: 90vh;
+        width: 100vw;
+
+        top: 0;
+        left: 0;
+
+        z-index: 998;
+
+        background-color: black;
+
+        transition: ease-in 2s;
+    }
+        #navbarMenu {
+            animation: slideInFromBottom 1s forwards;
+        }
+            @keyframes slideInFromBottom {
+                from {
+                    transform: translateY(100%);
+                }
+                to {
+                    transform: translateY(0);
+                }
+            }
+
+
+        #navbarButton button:hover #navbarCloseButton {
+            transform: rotate(90deg);
+            transition: 1s;
+        } 
+
+    .navigations-container {
+        height: 100vh;
+
+        overflow-x: auto;
+        white-space: nowrap;
+
+        background-color: black;
+    }
+
+    .navigations {
+        height: auto;
+        width: 170vw;
+
+        display: inline-block;
+    }
+
+        #navigationHome, #navigationRacing, #navigationTuning,
+        #navigationCars, #navigationContact {
+            height: 60vh;
+            width: 40vw;
+
+            margin-top: 15vh;
+            margin-left: 1vw;
+
+            float: left;
+            text-align: center;
+        }
+            
+            #navHomeIMG, #navRacingIMG, #navTuningIMG, #navCarsIMG, #navContactIMG {
+                height: 50vh;
+                width: 33vw;
+
+                margin-top: 5vh;
+
+                z-index: -1;
+                opacity: 0;
+                
+                transition: opacity 0.5s ease;
+
+                margin-top: -30vh;
+            }
+            #navigationHome:hover #navHomeIMG, #navigationRacing:hover #navRacingIMG,
+            #navigationTuning:hover #navTuningIMG, #navigationCars:hover #navCarsIMG,
+            #navigationContact:hover #navContactIMG {
+                opacity: 0.5;
+                
+            }
+   
+                #navHomeIMG:hover, #navRacingIMG:hover, #navTuningIMG:hover,
+                #navCarsIMG:hover, #navContactIMG:hover {
+                        animation: float-in 1s forwards;
+                    }
+                        @keyframes float-in {
+                            from {
+                                transform: rotate(-10deg);
+                            }
+                            to {
+                                transform: rotate(0deg);
+                            }
+                        }
+
+
+
+            #navigationHome h1, #navigationRacing h1, #navigationTuning h1,
+            #navigationCars h1, #navigationContact h1 {
+                font-size: 6vw;
+                font-weight: 900;
+                font-family: "Montserrat", sans-serif;
+                text-transform: uppercase;
+
+                cursor: pointer;
+
+                margin-top: 22vh;
+            }
+
+
+
+
+
+    .navbar-socialMedia {
+        height: 5vh;
+        width: 100vw;
+        
+        text-align: center;
+        position: fixed;
+    }
+        #socialLinkedIn, #socialGitHub, #socialInstagram, #socialSpotify {
+            height: 7vh;
+            width: 7vh;
+        
+            border-radius: 30rem;
+            border: none;
+            outline: none;
+            background-color: transparent;
+
+            margin: 1rem;
+        }
+            #socialLinkedIn svg, #socialGitHub svg,
+            #socialInstagram svg, #socialSpotify svg {
+                color: white;
+            }
+                #socialLinkedIn svg:hover, #socialGitHub svg:hover,
+                #socialInstagram svg:hover, #socialSpotify svg:hover {
+                    transition: .2s;
+                    transform: scale(1.3);
+                }
+
+            #socialLinkedIn svg:hover {
+                color: #0077B5;
+            }
+            #socialGitHub svg:hover {
+                color: white;
+            }
+            #buttonLinkedIn:hover {
+                color: #0077B5;
+            }
+            #socialInstagram svg:hover {
+                color: #d62976;
+            }
+            #socialSpotify svg:hover {
+                color: #1ED760;
+            }
+
+
+
+/*****************************/
+/* Section (Website Heading) */
+.website-heading {
+    height: 80vh;
+    width: 100%;
+
+    margin-top: 4.5vh;
+    margin-bottom: 4.5vh;
+}
+    .website-heading h1 {
+        background: url('https://papers.co/wallpaper/papers.co-mg60-urban-sunrise-winter-city-skyview-35-3840x2160-4k-wallpaper.jpg') no-repeat center center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-size: cover;
+
+        padding-top: 10vh;
+        padding-left: 15%;
+
+        font-size: 9vw;
+        font-weight: 900;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+    }
+    .website-heading div {
+        padding-left: 4.25vw;
+
+        font-size: 9vw;
+        font-weight: 900;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+    }
+
+    .website-heading p {
+        padding-left: 15%;
+    }
+
+
+/********************/
+/* Section (Tuning) */
+#sectionUnderground {
+    height: 200vh;
+    width: 100vw;
+}
+    #undergroundHeader {
+        height: max-content;
+        width: 100vw;
+    }
+        #undergroundHeader img {
+            height: 90vh;
+            width: 100%;
+        }
+        #undergroundHeader h1 {
+            position: absolute;
+            
+            top: 89%;
+            left: 5%;
+            transform: translate(-50%, -50%);
+            
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7); /* halbtransparentes Schwarz */
+            
+            padding: 10px;
+            border-radius: 5px;
+
+            font-size: 9vw;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+    #underground02 {
+        float: left;
+    }
+        #underground02 img {
+            height: 90vh;
+            width: 50vw;
+        }
+        #underground02 h1 {
+            position: absolute;
+            
+            top: 179.5%;
+            left: 7%;
+            transform: translate(-50%, -50%);
+            
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7); /* halbtransparentes Schwarz */
+            
+            padding: 10px;
+            border-radius: 5px;
+
+            font-size: 9vw;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+    #underground03 {
+        float: left;
+    }
+        #underground03 img {
+            height: 90vh;
+            width: 50vw;
+        }
+        #underground03 h1 {
+            position: absolute;
+            
+            top: 179.5%;
+            left: 58%;
+            transform: translate(-50%, -50%);
+            
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7); /* halbtransparentes Schwarz */
+            
+            padding: 10px;
+            border-radius: 5px;
+
+            font-size: 9vw;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+    #underground04 {
+        float: left;
+    }
+        #underground04 img {
+            height: 90vh;
+            width: 33vw;
+        }
+        #underground04 h1 {
+            position: absolute;
+            
+            top: 269%;
+            left: 7%;
+            transform: translate(-50%, -50%);
+            
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7); /* halbtransparentes Schwarz */
+            
+            padding: 10px;
+            border-radius: 5px;
+
+            font-size: 9vw;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+    #underground05 {
+        float: left;
+    }
+        #underground05 img {
+            height: 90vh;
+            width: 33vw;
+        }
+        #underground05 h1 {
+            position: absolute;
+            
+            top: 269%;
+            left: 41%;
+            transform: translate(-50%, -50%);
+            
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7); /* halbtransparentes Schwarz */
+            
+            padding: 10px;
+            border-radius: 5px;
+
+            font-size: 9vw;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+    
+    #underground06 {
+        float: left;
+    }
+        #underground06 img {
+            height: 90vh;
+            width: 33vw;
+        }
+        #underground06 h1 {
+            position: absolute;
+            
+            top: 269%;
+            left: 74%;
+            transform: translate(-50%, -50%);
+            
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7); /* halbtransparentes Schwarz */
+            
+            padding: 10px;
+            border-radius: 5px;
+
+            font-size: 9vw;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+    #underground07 {
+        float: left;
+    }
+        #underground07 img {
+            height: 90vh;
+            width: 100vw;
+        }
+        #underground07 h1 {
+            position: absolute;
+            
+            top: 359%;
+            left: 7%;
+            transform: translate(-50%, -50%);
+            
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7); /* halbtransparentes Schwarz */
+            
+            padding: 10px;
+            border-radius: 5px;
+
+            font-size: 9vw;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+    #underground08 {
+        float: left;
+    }
+        #underground08 img {
+            height: 90vh;
+            width: 33vw;
+        }
+        #underground08 h1 {
+            position: absolute;
+            
+            top: 449%;
+            left: 7%;
+            transform: translate(-50%, -50%);
+            
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7); /* halbtransparentes Schwarz */
+            
+            padding: 10px;
+            border-radius: 5px;
+
+            font-size: 9vw;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+    #underground09 {
+        float: left;
+    }
+        #underground09 img {
+            height: 90vh;
+            width: 33vw;
+        }
+        #underground09 h1 {
+            position: absolute;
+            
+            top: 449%;
+            left: 41%;
+            transform: translate(-50%, -50%);
+            
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7); /* halbtransparentes Schwarz */
+            
+            padding: 10px;
+            border-radius: 5px;
+
+            font-size: 9vw;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+    #underground10 {
+        float: left;
+    }
+        #underground10 img {
+            height: 90vh;
+            width: 33vw;
+        }
+        #underground10 h1 {
+            position: absolute;
+            
+            top: 449%;
+            left: 72%;
+            transform: translate(-50%, -50%);
+            
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7); /* halbtransparentes Schwarz */
+            
+            padding: 10px;
+            border-radius: 5px;
+
+            font-size: 9vw;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+                
+
+
+
+
+/******************/
+/* Section (cars) */
+#sectionCars {
+    height: 200vh;
+    width: 100vw;
+}
+    #audi-A3 {
+        height: 40vh;
+        width: 47vw;
+
+        margin-left: 2vw;
+
+        color: black;
+        background-color: white;
+
+        border-radius: 2rem;
+
+        float: left;
+        overflow: hidden;
+    }
+        #audi-A3-Infos {
+            height: 100%;
+            width: 50%;
+
+            float: left;
+        }
+            #audi-A3-Logo {
+                height: auto;
+                width: 5vw;
+                float: left;
+            }
+
+            #audi-A3-Bild {
+                height: auto;
+                width: 20vw;
+            }
+
+        #audi-A3-technischeDaten {
+            height: 100%;
+            width: 50%;
+
+            float: left;
+        }
+            #audi-A3-Motorbauart, #audi-A3-Leistung, #audi-A3-Antriebsart, #audi-A3-Gewicht {
+                height: 15vh;
+                width: 11vw;
+
+                border-radius: 1rem;
+
+                float: left;
+                margin: 0.2rem;
+            }
+                #audi-A3-Motorbauart {
+                    background-color: #F8E2CF;
+                }
+                #audi-A3-Leistung {
+                    background-color: #E7EBFA;
+                }
+                #audi-A3-Antriebsart {
+                    background-color: #EEEFB8;
+                }
+                #audi-A3-Gewicht {
+                    background-color: #F5EDFE;
+                }
+
+            #audi-A3-fickenbarkeit {
+                height: 7vh;
+                width: 22.5vw;
+
+                background-color: #C4E9C3;
+
+                border-radius: 1rem;
+
+                float: left;
+                margin: 0.2rem;
+            }
+
+
+    
+    /* More Cars to Explore */
+    .explore-cars {
+        height: max-content;
+        width: 90vw;
+
+        margin-top: 10vh;
+        margin-left: 5vw;
+        float: left;
+
+        border-radius: 2rem;
+
+        background-color: white;
+    }
+        #exploreCarsTable {
+            width: 100%;
+        }
+        #exploreCarsHeader {
+            height: 5vh;
+            width: 90vw;
+
+            color: black;
+            border-bottom: 0.1rem black solid;
+        }
+            #exploreCarsHeader td {
+                width: 17.5%;
+                text-align: center;
+
+                font-size: 125%;
+                font-weight: bold;
+            }
+            #exploreCarsHeaderModell {
+                width: 25% !important;
+            }
+
+
+
+    #exploreCarsColum {
+        height: 6vh;
+        width: 100%;
+
+        color: black;
+        border-bottom: 0.1rem grey solid;
+    }
+        #exploreCarsColum td {
+            width: 17.5%;
+
+            text-align: center;
+        }
+
+        #exploreCarsModell {
+            text-align: left !important;
+            width: 25% !important;
+        }
+
+        #exploreCarsIMG {
+            height: 5vh;
+            width: auto;
+        }
+        
+        #exploreCarsButton {
+            height: 4vh;
+            width: 8vw;
+
+            border-radius: 1rem;
+            outline: none;
+        }
+
+
+
+        /* Cars Dropdown Menu */
+        #carsDropdownHeader {
+            width: 100%;
+        }
+        #carsDropdownCompany, #carsDropdownModel {
+            color: black;
+        }
+        #dropdownTechnischeDaten {
+            height: auto;
+            width: 50%;
+
+            color: grey;
+
+            float: left;
+        }
+            #dropdownTechnischeDaten h5 {
+                margin-top: -2.5rem;
+                color: black;
+            }
+
+            #carDropdownSpeed {
+                width: 50%;
+                float: left;
+            }
+
+            #carDropdownHorsepower {
+                width: 50%;
+                float: left;
+            }
+
+            #carDropdownAcceleration {
+                width: 50%;
+                float: left;
+            }
+
+            #carDropdownEngine {
+                width: 50%;
+                float: left;
+            }
+
+            #carDropdownWeight {
+                width: 50%;
+                float: left;
+            }
+
+            /* Audi */
+            #carsAudiLogo {
+                height: auto;
+                width: 10vw;
+
+                float: left;
+            }
+
+            /* Audi A3 Sportback */
+            #audiA3Dropdown {
+                height: auto;
+                width: auto;
+            }
+                #audiA3Dropdown h5 {
+                    padding-top: 3vh;
+                }
+
+                #audiA3DropdownAuto {
+                    height: auto;
+                    width: 49%;
+                    margin-left: -11%;
+
+                    float: left;
+                }
+             
+            
+            /* Audi E-Tron GT */
+            #audiEtronDropdown {
+                height: auto;
+                width: auto;
+            }
+                #audiEtronDropdown h5 {
+                    padding-top: 3vh;
+                }
+
+                #audiEtronDropdownAuto {
+                    height: auto;
+                    width: 49%;
+                    margin-left: -11%;
+
+                    float: left;
+                }
+
+            /* Audi RS6 */
+            #audiRS6Dropdown {
+                height: auto;
+                width: auto;
+            }
+                #audiRS6Dropdown h5 {
+                    padding-top: 3vh;
+                }
+
+                #audiRS6DropdownAuto {
+                    height: auto;
+                    width: 49%;
+                    margin-left: -11%;
+
+                    float: left;
+                }
+
+
+            /* Ferarri */
+            #carsFerrariLogo {
+                height: auto;
+                width: 10vw;
+
+                padding-top: 1vh;
+
+                float: left;
+            }
+
+            /* Ferarri 12Cilindri */
+            #Ferrari12CilindriDropdown {
+                height: auto;
+                width: auto;
+            }
+                #Ferrari12CilindriDropdown h5 {
+                    padding-top: 3vh;
+                }
+
+                #Ferrari12CilindriDropdownAuto {
+                    height: auto;
+                    width: 49%;
+
+                    float: left;
+                }
+
+            
+            /* Ferarri FS90 Stradale */
+            #FerrariFS90Dropdown {
+                height: auto;
+                width: auto;
+            }
+                #FerrariFS90Dropdown h5 {
+                    padding-top: 3vh;
+                }
+
+                #FerrariFS90DropdownAuto {
+                    height: auto;
+                    width: 49%;
+
+                    float: left;
+                }
+
+
+            /* Ferarri LaFerrari */
+            #FerrariLaFerrariDropdown {
+                height: auto;
+                width: auto;
+            }
+                #FerrariLaFerrariDropdown h5 {
+                    padding-top: 3vh;
+                }
+
+                #FerrariLaFerrariDropdownAuto {
+                    height: auto;
+                    width: 49%;
+
+                    float: left;
+                } 

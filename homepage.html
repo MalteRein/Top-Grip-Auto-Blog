@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Grip Blog</title>
+
+    <!-- Browser Tab Logo -->
+    <link rel="icon" type="image" href="img/Website Icon.jpeg">
+
+    <!-- Bootstrap (Icons) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Font Awesome (Icons)-->
+    <script src="https://kit.fontawesome.com/59397cd7ab.js" crossorigin="anonymous"></script>
+
+    <!-- File links (Javascript & CSS) -->
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media-print.css">
+    <link rel="stylesheet" href="css/media-queries.css">
+
+    <!-- Charts.js (Diagramme)-->
+    <link rel="stylesheet" href="path/to/your/charts.min.css">
+
+    <!-- Google Fonts (Orbitron)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+    <!-- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header">
+        <div id="headerBlogName">
+            <h4 id="BlogNameText">TOP GRIP</h4>
+        </div>
+
+        <div id="headerContactButton">
+            <button onclick="navigateToContact()">
+                <p id="headerContactText">contact</p>
+            </button>
+        </div>
+
+
+        <div id="navbarButton">
+            <button onclick="openNavbar()">
+                <div id="navLines">
+                    <div id="navLineTop">
+                        <svg id="navLine1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
+                        </svg>
+                    </div>
+                    <div id="navLineBottom">
+                        <svg id="navLine2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
+                        </svg>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </header>
+
+        <!-- NAVBAR -->
+        <div id="navbarBackground"></div>
+
+        <div id="navbarMenu" class="navbar-menu" style="display: none;">
+            <header>
+                <div id="headerBlogName">
+                    <h4 id="BlogNameText">TOP GRIP</h4>
+                </div>
+        
+                <div id="headerContactButton">
+                    <button onclick="navigateToContact()">
+                        <p id="headerContactText">contact</p>
+                    </button>
+                </div>
+        
+        
+                <div id="navbarButton">
+                    <button onclick="closeNavbar()">
+                        <svg id="navbarCloseButton" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" class="bi bi-x-lg" viewBox="0 0 16 16">
+                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <div class="navigations-container">
+                <div class="navigations">
+                    <div onclick="navigateToHome()" id="navigationHome">
+                        <h1>Home</h1>
+                        <img id="navHomeIMG" src="img/navbar/navbar_home.png">
+                    </div>
+
+                    <div onclick="navigateToUndergound()" id="navigationTuning">
+                        <h1>Undergound</h1>
+                        <img id="navTuningIMG" src="img/navbar/navbar_tuning.jpeg">
+                    </div>
+
+                    <div onclick="navigateToCars()" id="navigationCars">
+                        <h1>Cars</h1>
+                        <img id="navCarsIMG" src="img/navbar/navbar_cars.jpeg">
+                    </div>
+
+                    <div onclick="navigateToContact()" id="navigationContact">
+                        <h1>Contact</h1>
+                        <img id="navContactIMG" src="img/navbar/navbar_contact.jpeg">
+                    </div>
+                </div>
+
+                <div class="navbar-socialMedia">
+                    <a href="https://www.linkedin.com/in/malte-rein-5326a8303/" target="_blank">
+                        <button id="socialLinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentcolor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                            </svg>
+                        </button>
+                    </a>
+                    <a href="https://github.com/MalteRein" target="_blank">
+                        <button id="socialGitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentcolor" class="bi bi-github" viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                            </svg>
+                        </button>
+                    </a>
+                    <a href="https://www.instagram.com/malte_rn" target="_blank">
+                        <button id="socialInstagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentcolor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                            </svg>
+                        </button>
+                    </a>
+                    <a href="https://open.spotify.com/track/4PTG3Z6ehGkBFwjybzWkR8?si=864a43637c4c445a" target="_blank">
+                        <button id="socialSpotify">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentcolor" class="bi bi-spotify" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288"/>
+                            </svg>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            
+
+            <div class="navbar-socialMedia">
+                <a href="https://www.linkedin.com/in/malte-rein-5326a8303/" target="_blank">
+                    <button id="socialLinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentcolor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                        </svg>
+                    </button>
+                </a>
+                <a href="https://github.com/MalteRein" target="_blank">
+                    <button id="socialGitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentcolor" class="bi bi-github" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                        </svg>
+                    </button>
+                </a>
+                <a href="https://www.instagram.com/malte_rn" target="_blank">
+                    <button id="socialInstagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentcolor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                        </svg>
+                    </button>
+                </a>
+                <a href="https://open.spotify.com/track/4PTG3Z6ehGkBFwjybzWkR8?si=864a43637c4c445a" target="_blank">
+                    <button id="socialSpotify">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentcolor" class="bi bi-spotify" viewBox="0 0 16 16">
+                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288"/>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+    <section id="websiteHeading" class="website-heading">
+        <h1>"Autos sind <div>Träume auf Rädern"</div></h1>
+        <p>~ Ferdinand Porsche</p>
+    </section>
+
+
+
+
+    <!--------------------->
+    <!-- NAVBAR SECTIONS -->
+
+    <!-- Section << TUNING >> -->
+    <section id="sectionUnderground" style="display: none;">
+        <div id="undergroundHeader">
+            <img src="img/Section (underground)/Underground01.jpg">
+            <h1>01</h1>
+        </div>
+
+
+        <div id="underground02">
+            <img src="img/Section (underground)/Underground02.jpg">
+            <h1>02</h1>
+        </div>
+        <div id="underground03">
+            <img src="img/Section (underground)/Underground03.jpg">
+            <h1>03</h1>
+        </div>
+
+
+        <div id="underground04">
+            <img src="img/Section (underground)/Underground04.jpg">
+            <h1>04</h1>
+        </div>
+        <div id="underground05">
+            <img src="img/Section (underground)/Underground05.jpg">
+            <h1>05</h1>
+        </div>
+        <div id="underground06">
+            <img src="img/Section (underground)/Underground06.jpg">
+            <h1>06</h1>
+        </div>
+
+
+        <div id="underground07">
+            <img src="img/Section (underground)/Underground07.jpg">
+            <h1>07</h1>
+        </div>
+
+
+        <div id="underground08">
+            <img src="img/Section (underground)/Underground08.jpg">
+            <h1>08</h1>
+        </div>
+        <div id="underground09">
+            <img src="img/Section (underground)/Underground09.jpg">
+            <h1>09</h1>
+        </div>
+        <div id="underground10">
+            <img src="img/Section (underground)/Underground10.jpg">
+            <h1>10</h1>
+        </div>
+    </section>
+
+    <!-- Section << CARS >> -->
+    <section id="sectionCars" style="display: none;">
+
+        <!-- AUDI A3 SPORTBACK -->
+        <div id="audi-A3">
+            <div id="audi-A3-Infos">
+                <img id="audi-A3-Logo" src="img/Section (cars)/Audi/Audi Logo.svg">
+                <h5>Audi Moll Group</h5>
+                <p>A3 Sportback</p>
+
+                <img id="audi-A3-Bild" src="img/Section (cars)/Audi/Audi A3/Audi A3.jpeg">
+
+                <p>Preis</p>
+                <h5>35.650,00 EUR</h5>
+            </div>
+
+            <div id="audi-A3-technischeDaten">
+                <div id="audi-A3-Motorbauart">
+                    <button>
+                        
+                    </button>
+                    <p>4 Zylinder</p>
+                </div>
+                <div id="audi-A3-Leistung">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
+                            <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4M3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.39.39 0 0 0-.029-.518z"/>
+                            <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A8 8 0 0 1 0 10m8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3"/>
+                        </svg>
+                    </button>
+                    <p>226 km/h</p>
+                </div>
+                <div id="audi-A3-Antriebsart">
+                    <button>
+                        
+                    </button>
+                    <p>Vorderradantrieb</p>
+                </div>
+                <div id="audi-A3-Gewicht">
+                    <button>
+                        
+                    </button>
+                    <p>1.400 kg</p>
+                </div>
+                <div id="audi-A3-fickenbarkeit">
+                    <button>
+                        
+                    </button>
+                    <p>100%</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- AUDI A3 SPORTBACK -->
+        <div id="audi-A3">
+            <div id="audi-A3-Infos">
+                <img id="audi-A3-Logo" src="img/Section (cars)/Audi/Audi Logo.svg">
+                <h5>Audi Moll Group</h5>
+                <p>Audi E-Tron GT</p>
+
+                <img id="audi-A3-Bild" src="img/Section (cars)/Audi/Audi E-Tron GT/Audi E-Tron GT.jpeg">
+
+                <p>Preis</p>
+                <h5>35.650,00 EUR</h5>
+            </div>
+
+            <div id="audi-A3-technischeDaten">
+                <div id="audi-A3-Motorbauart">
+                    <button>
+                        
+                    </button>
+                    <p>4 Zylinder</p>
+                </div>
+                <div id="audi-A3-Leistung">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
+                            <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4M3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.39.39 0 0 0-.029-.518z"/>
+                            <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A8 8 0 0 1 0 10m8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3"/>
+                        </svg>
+                    </button>
+                    <p>226 km/h</p>
+                </div>
+                <div id="audi-A3-Antriebsart">
+                    <button>
+                        
+                    </button>
+                    <p>Vorderradantrieb</p>
+                </div>
+                <div id="audi-A3-Gewicht">
+                    <button>
+                        
+                    </button>
+                    <p>1.400 kg</p>
+                </div>
+                <div id="audi-A3-fickenbarkeit">
+                    <button>
+                        
+                    </button>
+                    <p>100%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- More Cars to Explore -->
+        <div class="explore-cars">
+            <div class="explore-cars-info">
+                <table id="exploreCarsTable">
+                    <tr id="exploreCarsHeader">
+                        <td id="exploreCarsHeaderModell">Modell</td>
+                        <td>Tempo</td>
+                        <td>Beschleunigung</td>
+                        <td>Preis</td>
+                        <td></td>
+                    </tr>
+                </table>
+
+                <!-- Audi A3 Sportback -->
+                <table id="exploreCarsTable">
+                    <tr id="exploreCarsColum">
+                        <td id="exploreCarsModell">
+                            <img id="exploreCarsIMG" src="img/Section (cars)/Audi/Audi A3/Audi A3.jpeg">
+                            Audi A3 Sportback
+                        </td>
+                        <td>8,1s</td>
+                        <td>360 km/h</td>
+                        <td>35.000,00 EUR</td>
+                        <td>
+                            <button id="exploreCarsButton" onclick="showAudiA3Dropdown()">See More</button>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <!-- Audi A3 Sportback Dropdown -->
+                <div id="audiA3Dropdown" style="display: none;">
+                    <div id="carsDropdownHeader">
+                        <img id="carsAudiLogo" src="img/Section (cars)/Audi/Audi Logo.svg">
+                        <h5 id="carsDropdownCompany">Audi Moll Group</h5>
+                        <p id="carsDropdownModel">Audi A3 Sportback</p>
+                    </div>
+
+                    <img id="audiA3DropdownAuto" src="img/Section (cars)/Audi/Audi A3/Audi A3.jpeg">
+
+                    <div id="dropdownTechnischeDaten">
+                        <div id="carDropdownSpeed">
+                            <p>Tempo</p>
+                            <h5>226 km/h</h5>
+                        </div>
+
+                        <div id="carDropdownHorsepower">
+                            <p>Max. Leistung</p>
+                            <h5>150 PS</h5>
+                        </div>
+
+                        <div id="carDropdownAcceleration">
+                            <p>Beschleunigung</p>
+                            <h5>8,1s</h5>
+                        </div>
+
+                        <div id="carDropdownRange">
+                            <p>Reichweite</p>
+                            <h5>495 km</h5>
+                        </div>
+
+                        <div id="carDropdownEngine">
+                            <p>Motor</p>
+                            <h5>V4</h5>
+                        </div>
+
+                        <div id="carDropdownWeight">
+                            <p>Gewicht</p>
+                            <h5>1.400 kg</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audi E-Tron GT -->
+                <table id="exploreCarsTable">
+                    <tr id="exploreCarsColum">
+                        <td id="exploreCarsModell">
+                            <img id="exploreCarsIMG" src="img/Section (cars)/Audi/Audi E-Tron GT/Audi E-Tron GT.jpeg">
+                            Audi E-Tron GT
+                        </td>
+                        <td>3,3s</td>
+                        <td>360 km/h</td>
+                        <td>35.000,00 EUR</td>
+                        <td>
+                            <button id="exploreCarsButton" onclick="showAudiEtronDropdown()">See More</button>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <!-- Audi E-Tron GT  Dropdown-->
+                <div id="audiEtronDropdown" style="display: none;">
+                    <div id="carsDropdownHeader">
+                        <img id="carsAudiLogo" src="img/Section (cars)/Audi/Audi Logo.svg">
+                        <h5 id="carsDropdownCompany">Audi Moll Group</h5>
+                        <p id="carsDropdownModel">Audi E-Tron GT</p>
+                    </div>
+
+                    <img id="audiEtronDropdownAuto" src="img/Section (cars)/Audi/Audi E-Tron GT/Audi E-Tron GT.jpeg">
+
+                    <div id="dropdownTechnischeDaten">
+                        <div id="carDropdownSpeed">
+                            <p>Tempo</p>
+                            <h5>226 km/h</h5>
+                        </div>
+
+                        <div id="carDropdownHorsepower">
+                            <p>Max. Leistung</p>
+                            <h5>646 PS</h5>
+                        </div>
+
+                        <div id="carDropdownAcceleration">
+                            <p>Beschleunigung</p>
+                            <h5>3,3s</h5>
+                        </div>
+
+                        <div id="carDropdownRange">
+                            <p>Reichweite</p>
+                            <h5>488 km</h5>
+                        </div>
+
+                        <div id="carDropdownEngine">
+                            <p>Motor</p>
+                            <h5>V4</h5>
+                        </div>
+
+                        <div id="carDropdownWeight">
+                            <p>Gewicht</p>
+                            <h5>1.400 kg</h5>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Audi RS6 -->
+                <table id="exploreCarsTable">
+                    <tr id="exploreCarsColum">
+                        <td id="exploreCarsModell">
+                            <img id="exploreCarsIMG" src="img/Section (cars)/Audi/Audi RS 6/Audi RS6.png">
+                            Audi RS6
+                        </td>
+                        <td>3,3 sek</td>
+                        <td>360 km/h</td>
+                        <td>35.000,00 EUR</td>
+                        <td>
+                            <button id="exploreCarsButton" onclick="showAudiRS6Dropdown()">See More</button>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Audi RS6 Dropdown -->
+                <div id="audiRS6Dropdown" style="display: none;">
+                    <div id="carsDropdownHeader">
+                        <img id="carsAudiLogo" src="img/Section (cars)/Audi/Audi Logo.svg">
+                        <h5 id="carsDropdownCompany">Audi Moll Group</h5>
+                        <p id="carsDropdownModel">Audi Audi RS6</p>
+                    </div>
+
+                    <img id="audiRS6DropdownAuto" src="img/Section (cars)/Audi/Audi RS 6/Audi RS6.png">
+
+                    <div id="dropdownTechnischeDaten">
+                        <div id="carDropdownSpeed">
+                            <p>Tempo</p>
+                            <h5>226 km/h</h5>
+                        </div>
+
+                        <div id="carDropdownHorsepower">
+                            <p>Max. Leistung</p>
+                            <h5>150 PS</h5>
+                        </div>
+
+                        <div id="carDropdownAcceleration">
+                            <p>Beschleunigung</p>
+                            <h5>8,1s</h5>
+                        </div>
+
+                        <div id="carDropdownRange">
+                            <p>Reichweite</p>
+                            <h5>495 km</h5>
+                        </div>
+
+                        <div id="carDropdownEngine">
+                            <p>Motor</p>
+                            <h5>V4</h5>
+                        </div>
+
+                        <div id="carDropdownWeight">
+                            <p>Gewicht</p>
+                            <h5>1.400 kg</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Ferrari -->
+                <!-- Ferrari 12Cilindri -->
+                <table id="exploreCarsTable">
+                    <tr id="exploreCarsColum">
+                        <td id="exploreCarsModell">
+                            <img id="exploreCarsIMG" src="img/Section (cars)/Ferarri/Ferarri 12Cilindri/Ferrari 12Cilindri.jpeg">
+                            Ferrari 12Cilindri
+                        </td>
+                        <td>3,3 sek</td>
+                        <td>360 km/h</td>
+                        <td>35.000,00 EUR</td>
+                        <td>
+                            <button id="exploreCarsButton" onclick="showFerarri12CilindriDropdown()">See More</button>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Ferrari 12Cilindri Dropdown -->
+                <div id="Ferrari12CilindriDropdown" style="display: none;">
+                    <div id="carsDropdownHeader">
+                        <img id="carsFerrariLogo" src="img/Section (cars)/Ferarri/Ferarri Logo.jpeg">
+                        <h5 id="carsDropdownCompany">Ferrari</h5>
+                        <p id="carsDropdownModel">Ferrari 12Cilindri</p>
+                    </div>
+
+                    <img id="Ferrari12CilindriDropdownAuto" src="img/Section (cars)/Ferarri/Ferarri 12Cilindri/Ferrari 12Cilindri.jpeg">
+
+                    <div id="dropdownTechnischeDaten">
+                        <div id="carDropdownSpeed">
+                            <p>Tempo</p>
+                            <h5>226 km/h</h5>
+                        </div>
+
+                        <div id="carDropdownHorsepower">
+                            <p>Max. Leistung</p>
+                            <h5>150 PS</h5>
+                        </div>
+
+                        <div id="carDropdownAcceleration">
+                            <p>Beschleunigung</p>
+                            <h5>8,1s</h5>
+                        </div>
+
+                        <div id="carDropdownRange">
+                            <p>Reichweite</p>
+                            <h5>495 km</h5>
+                        </div>
+
+                        <div id="carDropdownEngine">
+                            <p>Motor</p>
+                            <h5>V4</h5>
+                        </div>
+
+                        <div id="carDropdownWeight">
+                            <p>Gewicht</p>
+                            <h5>1.400 kg</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Ferrari FS90 Stradale -->
+                <table id="exploreCarsTable">
+                    <tr id="exploreCarsColum">
+                        <td id="exploreCarsModell">
+                            <img id="exploreCarsIMG" src="img/Section (cars)/Ferarri/Ferarri FS90 Stradale/Ferrari FS90 Stradale.jpeg">
+                            Ferrari FS90 Stradale
+                        </td>
+                        <td>3,3 sek</td>
+                        <td>360 km/h</td>
+                        <td>35.000,00 EUR</td>
+                        <td>
+                            <button id="exploreCarsButton" onclick="showFerarriFS90Dropdown()">See More</button>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Ferrari FS90 Stradale Dropdown -->
+                <div id="FerrariFS90Dropdown" style="display: none;">
+                    <div id="carsDropdownHeader">
+                        <img id="carsAudiLogo" src="img/Section (cars)/Ferarri/Ferarri Logo.jpeg">
+                        <h5 id="carsDropdownCompany">Ferrari</h5>
+                        <p id="carsDropdownModel">Ferrari FS90 Stradale</p>
+                    </div>
+
+                    <img id="FerrariFS90DropdownAuto" src="img/Section (cars)/Ferarri/Ferarri FS90 Stradale/Ferrari FS90 Stradale.jpeg">
+
+                    <div id="dropdownTechnischeDaten">
+                        <div id="carDropdownSpeed">
+                            <p>Tempo</p>
+                            <h5>226 km/h</h5>
+                        </div>
+
+                        <div id="carDropdownHorsepower">
+                            <p>Max. Leistung</p>
+                            <h5>150 PS</h5>
+                        </div>
+
+                        <div id="carDropdownAcceleration">
+                            <p>Beschleunigung</p>
+                            <h5>8,1s</h5>
+                        </div>
+
+                        <div id="carDropdownRange">
+                            <p>Reichweite</p>
+                            <h5>495 km</h5>
+                        </div>
+
+                        <div id="carDropdownEngine">
+                            <p>Motor</p>
+                            <h5>V4</h5>
+                        </div>
+
+                        <div id="carDropdownWeight">
+                            <p>Gewicht</p>
+                            <h5>1.400 kg</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Ferrari LaFerrari -->
+                <table id="exploreCarsTable">
+                    <tr id="exploreCarsColum">
+                        <td id="exploreCarsModell">
+                            <img id="exploreCarsIMG" src="img/Section (cars)/Ferarri/Ferarri LaFerrari/Ferrari LaFerrari.png">
+                            Ferrari LaFerarri
+                        </td>
+                        <td>3,3 sek</td>
+                        <td>360 km/h</td>
+                        <td>35.000,00 EUR</td>
+                        <td>
+                            <button id="exploreCarsButton" onclick="showFerarriLaFerarriDropdown()">See More</button>
+                        </td>
+                    </tr>
+                </table>
+            
+                <!-- Ferrari LaFerrari Dropdown -->
+                <div id="FerrariLaFerrariDropdown" style="display: none;">
+                    <div id="carsDropdownHeader">
+                        <img id="carsAudiLogo" src="img/Section (cars)/Ferarri/Ferarri Logo.jpeg">
+                        <h5 id="carsDropdownCompany">Ferrari</h5>
+                        <p id="carsDropdownModel">Ferrari LaFerrari</p>
+                    </div>
+
+                    <img id="FerrariLaFerrariDropdownAuto" src="img/Section (cars)/Ferarri/Ferarri LaFerrari/Ferrari LaFerrari.png">
+
+                    <div id="dropdownTechnischeDaten">
+                        <div id="carDropdownSpeed">
+                            <p>Tempo</p>
+                            <h5>226 km/h</h5>
+                        </div>
+
+                        <div id="carDropdownHorsepower">
+                            <p>Max. Leistung</p>
+                            <h5>150 PS</h5>
+                        </div>
+
+                        <div id="carDropdownAcceleration">
+                            <p>Beschleunigung</p>
+                            <h5>8,1s</h5>
+                        </div>
+
+                        <div id="carDropdownRange">
+                            <p>Reichweite</p>
+                            <h5>495 km</h5>
+                        </div>
+
+                        <div id="carDropdownEngine">
+                            <p>Motor</p>
+                            <h5>V4</h5>
+                        </div>
+
+                        <div id="carDropdownWeight">
+                            <p>Gewicht</p>
+                            <h5>1.400 kg</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section << Contact >> -->
+    <section id="sectionContact" style="display: none;">
+        <h1>Contact</h1>
+    </section>
+
+</body>
+</html>

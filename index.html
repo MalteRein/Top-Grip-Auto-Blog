@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen</title>
+
+    <!-- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #splash {
+            font-family: "Faster One", system-ui;
+            font-size: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="splash"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const textToDisplay = "Top Grip";
+            const splashElement = document.getElementById("splash");
+            let displayText = "";
+            let index = 0;
+
+            function showNextLetter() {
+                if (index < textToDisplay.length) {
+                    displayText += textToDisplay[index];
+                    splashElement.textContent = displayText;
+                    index++;
+                    setTimeout(showNextLetter, 300); // Wartezeit zwischen den Buchstaben
+                } else {
+                    redirectToHomePage();
+                }
+            }
+
+            function redirectToHomePage() {
+                // Nach 3 Sekunden zur Homepage weiterleiten
+                setTimeout(function() {
+                    window.location.href = "homepage.html";
+                }, 3000); // 3000 Millisekunden = 3 Sekunden
+            }
+
+            showNextLetter();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+@media print {
+    body {
+        filter: grayscale(100%); /* Schwarz-Weiß Filter */
+    }
+    #websiteHeading {
+        background-color: black;
+        color: black;
+    }
+}
